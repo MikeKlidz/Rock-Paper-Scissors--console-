@@ -1,11 +1,14 @@
 const gameOptions = ["Rock", "Paper", "Scissors"];
 
+// Function to get computer choice
 
 function getComputerChoice(){
     const randomNumber = Math.round(Math.random() * 2);
     const compChoice = gameOptions[randomNumber];
     return compChoice;
 }
+
+// Function for one-round play
 
 function playRound(playerChoice = prompt("Enter 'Rock', 'Paper' or 'Scissors'..."), compChoice = getComputerChoice()) {
     let firstLetter = playerChoice.slice(0, 1).toUpperCase();
@@ -30,4 +33,14 @@ function playRound(playerChoice = prompt("Enter 'Rock', 'Paper' or 'Scissors'...
         return "You lose!";
     }
 }
-console.log(playRound());
+
+// Function to play 5-round game
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        console.log(playRound());
+    }
+    
+}
+
+game();
